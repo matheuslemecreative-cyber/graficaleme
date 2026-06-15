@@ -320,7 +320,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const nomeVisualCategoria = mapeamentoTitulos[catAtiva] || "Produtos Cadastrados";
         tituloCategoria.innerText = nomeVisualCategoria;
-        document.title = `Flexo Gráfica - ${nomeVisualCategoria}`;
+        document.title = `Gráfica - ${nomeVisualCategoria}`;
 
         for (const id in produtosDB) {
             const produto = produtosDB[id];
