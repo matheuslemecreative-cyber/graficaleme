@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica - Categoria</title>
+    <link rel="icon" type="image/png" href="favicon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="flexologo.png" alt="Flexo Gráfica" class="logo-img">
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" id="inputBusca" placeholder="Buscar no catálogo...">
+                <button type="button" id="btnBusca"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-menu" id="navMenu">
+        <button class="menu-close" id="menuClose">&times;</button>
+        <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#mais-vendidos">Mais Vendidos</a></li>
+            <li><a href="categoria.html?cat=todos">Todos os Produtos</a></li>
+            <li><a href="categoria.html?cat=adesivos">Adesivos e Lacres</a></li>
+            <li><a href="categoria.html?cat=agendas">Agendas</a></li>
+            <li><a href="categoria.html?cat=brindes">Brindes em Geral</a></li>
+            <li><a href="categoria.html?cat=cadernos">Cadernos</a></li>
+            <li><a href="categoria.html?cat=caixas">Caixas e Cartuchos</a></li>
+            <li><a href="categoria.html?cat=cartao">Cartão de Visita</a></li>
+            <li><a href="categoria.html?cat=panfletos">Panfletos</a></li>
+            <li><a href="categoria.html?cat=sacolas">Sacolas</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-content-wrapper">
+        <div class="category-header">
+            <h2 id="categoria-titulo">Carregando...</h2>
+            <div class="category-breadcrumbs">
+                <a href="index.html">Início</a> &gt; <span id="breadcrumb-atual">Categoria</span>
+            </div>
+        </div>
+        
+        <main class="category-page-grid" id="cards-categoria-interna"></main>
+    </div>
+
+    <a href="https://wa.me/5514988378102" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
