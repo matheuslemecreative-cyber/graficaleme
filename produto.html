@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica - Produtos</title>
+    <link rel="icon" type="image/png" href="favicon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="flexologo.png" alt="Flexo Gráfica" class="logo-img">
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-menu" id="navMenu">
+        <button class="menu-close" id="menuClose">&times;</button>
+        <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#mais-vendidos">Mais Vendidos</a></li>
+            <li><a href="categoria.html?cat=todos">Todos os Produtos</a></li>
+            <li><a href="categoria.html?cat=adesivos">Adesivos e Lacres</a></li>
+            <li><a href="categoria.html?cat=agendas">Agendas</a></li>
+            <li><a href="categoria.html?cat=brindes">Brindes em Geral</a></li>
+            <li><a href="categoria.html?cat=cadernos">Cadernos</a></li>
+            <li><a href="categoria.html?cat=caixas">Caixas e Cartuchos</a></li>
+            <li><a href="categoria.html?cat=cartao">Cartão de Visita</a></li>
+            <li><a href="categoria.html?cat=panfletos">Panfletos</a></li>
+            <li><a href="categoria.html?cat=sacolas">Sacolas</a></li>
+        </ul>
+    </nav>
+
+    <main class="product-internal-container">
+        <div class="product-internal-media">
+            <div class="main-image-wrapper">
+                <img src="" id="product-large-img" alt="Carregando imagem...">
+            </div>
+        </div>
+
+        <div class="product-internal-details">
+            <span class="product-badge">Produto Personalizado</span>
+            <h1 id="product-title">Carregando título...</h1>
+            <div class="internal-price-box">
+                <span class="price-label">Preço:</span>
+                <span class="price-value">Sob Consulta</span>
+            </div>
+            
+            <p class="product-description" id="product-desc">Carregando descrição detalhada do produto...</p>
+
+            <div class="technical-specs">
+                <h3><i class="fa-solid fa-gear"></i> Especificações Padrão</h3>
+                <ul>
+                    <li><strong>Produção:</strong> Sob demanda (Arte inclusa ou do cliente)</li>
+                    <li><strong>Acabamentos:</strong> Variados conforme necessidade</li>
+                    <li><strong>Prazo:</strong> Rápido e a combinar no fechamento</li>
+                </ul>
+            </div>
+
+            <a href="#" id="btn-quote-whatsapp" class="btn-whatsapp-quote" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
+            </a>
+        </div>
+    </main>
+	
+    <section class="mais-produtos-section">
+        <div class="container-mais-produtos">
+            <h2 class="titulo-mais-produtos">Mais Produtos:</h2>
+            
+            <div class="carousel-recomendados-wrapper">
+                <button class="nav-btn prev-btn" id="recomendadosPrev" aria-label="Anterior">&#10094;</button>
+                
+                <div class="trilho-recomendados" id="cards-mais-produtos"></div>
+                
+                <button class="nav-btn next-btn" id="recomendadosNext" aria-label="Próximo">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5514988378102" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

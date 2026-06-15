@@ -1,0 +1,920 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    color: #1a1a1a;
+}
+
+/* CABEÇALHO DESKTOP */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+.logo {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.logo a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo-img {
+    height: 95px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+    padding: 12px 15px;
+    background-color: #fdfdfd;
+}
+
+.search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    width: 380px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666666;
+}
+
+/* CATEGORIAS DESKTOP */
+.nav-menu {
+    border-top: 1px solid #eeeeee;
+    background-color: #ff0055;
+    position: relative;
+    z-index: 90;
+}
+
+.menu-close { display: none; }
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6px 0;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.nav-list li a:hover { color: #b2b2b2; }
+
+/* BANNERS PRINCIPAIS */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eaeaea;
+    z-index: 1;
+}
+.carousel-slide { width: 100%; }
+.banner-item { display: none; width: 100%; }
+.banner-item.active { display: block; }
+.banner-item img { width: 100%; height: auto; display: block; }
+
+.carousel-dots {
+    position: absolute; bottom: 15px; width: 100%; text-align: center; z-index: 10;
+}
+.dot {
+    cursor: pointer; height: 11px; width: 11px; margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5); border-radius: 50%; display: inline-block;
+}
+.dot.active { background-color: #ff0055; }
+
+/* SEÇÕES DAS VITRINES HOME */
+.products-section {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.section-header h2 a {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-left: 4px solid #ff0055;
+    padding-left: 10px;
+}
+.products-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.products-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 10px 5px;
+}
+.products-grid::-webkit-scrollbar { display: none; }
+.products-grid { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* CARDS DO PRODUTO (ARREDONDADOS) */
+.product-card {
+    background-color: #ffffff;
+    min-width: calc(25% - 15px);
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #fafafa;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+.product-image img { width: 100%; height: 100%; object-fit: cover; }
+.product-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+.product-info h3 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px; }
+.product-info p { font-size: 16px; color: #666666; line-height: 1.4; margin-bottom: 15px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.product-price { font-size: 22px; font-weight: 700; color: #ff0055; margin-top: auto; }
+
+.nav-arrow {
+    background-color: #ff0055; border: 1px solid #dcdcdc; color: #ffffff;
+    width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+    position: absolute; z-index: 10; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.prev-arrow { left: -85px; }
+.next-arrow { right: -85px; }
+
+/* =======================================================
+    PÁGINA INTERNA DO PRODUTO (DESKTOP)
+   ======================================================= */
+.product-internal-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    padding: 30px;
+    gap: 40px;
+}
+.product-internal-media { flex: 1; max-width: 500px; }
+.main-image-wrapper { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; border: 1px solid #eee; overflow: hidden; background-color: #fafafa; }
+.main-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.product-internal-details { flex: 1; display: flex; flex-direction: column; }
+.product-badge { background-color: #ff0055; color: #ffffff; font-size: 14px; font-weight: 600; padding: 4px 10px; border-radius: 4px; align-self: flex-start; margin-bottom: 12px; }
+.product-internal-details h1 { font-size: 36px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; }
+.internal-price-box { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+.price-label { font-size: 22px; color: #1a1a1a; font-weight: bold; }
+.price-value { font-size: 28px; font-weight: 800; color: #ff0055; margin-left: 8px; }
+.product-description { font-size: 16.5px; color: #444444; line-height: 1.6; margin-bottom: 25px; }
+.technical-specs { background-color: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 15px; margin-bottom: 30px; }
+.technical-specs h3 { font-size: 22px; margin-bottom: 10px; color: #1a1a1a; }
+.technical-specs ul { list-style: none; }
+.technical-specs ul li { font-size: 16.5px; color: #555; margin-bottom: 6px; }
+
+.btn-whatsapp-quote {
+    background-color: #25d366; color: #ffffff; text-decoration: none; font-size: 22px; font-weight: 700;
+    padding: 16px 25px; border-radius: 8px; text-align: center; display: inline-block;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2); transition: background-color 0.2s, transform 0.2s;
+}
+.btn-whatsapp-quote:hover { background-color: #128c7e; transform: translateY(-2px); }
+
+/* CONTATO FLUTUANTE */
+.whatsapp-float {
+    position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px;
+    background-color: #25d366; color: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); z-index: 999999; text-decoration: none;
+}
+
+.sidebar-overlay { display: none; }
+
+/* =======================================================
+    RESPONSIVIDADE E VISUAL BONITO PARA CELULAR (MOBILE)
+   ======================================================= */
+@media (max-width: 768px) {
+    .menu-toggle { display: block !important; }
+    .logo-img { height: 70px; margin-left: 20px;}
+    .search-box { width: 160px; padding: 10px 10px; }
+    .search-box input { width: 100%; font-size: 12px; }
+
+    /* MENU CELULAR */
+    .nav-menu {
+        position: fixed; top: 0; left: -100%; width: 280px; height: 100vh;
+        background-color: #ff0055; box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+        transition: left 0.3s ease-in-out; z-index: 99999 !important; padding: 60px 0 20px 0;
+    }
+    .nav-menu.open { left: 0 !important; }
+    .menu-close { display: block !important; position: absolute; top: 15px; right: 20px; font-size: 40px; background: none; border: none; color: #b9003e; }
+    .nav-list { flex-direction: column; }
+    .nav-list li a { padding: 15px 25px; font-size: 20px; border-bottom: 1px solid #b9003e; }
+
+    /* CARROSSEL HOME */
+    .carousel-container { width: 100%; aspect-ratio: 1000 / 1100; }
+    .banner-item img { width: 100vw; height: calc(100vw * (1100 / 1000)); object-fit: cover; }
+
+    /* ROLAGEM DE PRODUTOS NO MOBILE */
+    .products-section { margin: 25px auto; padding: 0 15px; }
+    .nav-arrow { display: none !important; }
+    .product-card { min-width: calc(60% - 10px); } /* Mostra 1 card e meio instigando o arrasto lateral */
+    .product-info h3 { font-size: 14px; }
+    .product-info p { display: none; }
+
+    /* DETALHES INTERNOS MOBILE (BOTOES E ESPAÇAMENTOS LINDOS) */
+    .product-internal-container { flex-direction: column; margin: 0; padding: 0 0 90px 0; border-radius: 0; border: none; background-color: #f4f4f4; }
+    .product-internal-media { max-width: 100%; width: 100%; }
+    .main-image-wrapper { border-radius: 0; border: none; }
+    .product-internal-details { padding: 25px 20px; background-color: #ffffff; margin-top: 10px; border-radius: 20px 20px 0 0; }
+    .product-internal-details h1 { font-size: 24px; line-height: 1.3; font-weight: 700; }
+    .price-value { font-size: 26px; }
+    .product-description { font-size: 14.5px; line-height: 1.5; color: #444; }
+
+    /* FIXA O BOTÃO DE ORÇAR NA BASE DO CELULAR (FÁCIL CLIQUE COM DEDO) */
+    .btn-whatsapp-quote {
+        position: fixed; bottom: 0; left: 0; right: 0; width: 100%; border-radius: 0;
+        z-index: 999999 !important; padding: 20px; font-size: 16px; box-shadow: 0 -5px 15px rgba(0,0,0,0.15);
+    }
+    .sidebar-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.6); z-index: 2000; display: none; }
+    .sidebar-overlay.active { display: block !important; }
+}
+
+/* =======================================================
+   ESTILOS EXCLUSIVOS PARA A PÁGINA DE CATEGORIAS
+======================================================= */
+
+/* Ajustes de Variáveis Locais da Marca */
+.logo-text {
+    font-weight: bold; 
+    font-size: 22px; 
+    color: #d2147a; /* Magenta da Flexo */
+}
+.logo-text-alt {
+    color: #dfaa22; /* Ouro da Flexo */
+}
+
+/* Container de Conteúdo */
+.page-content-wrapper {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Topo da Categoria (Título) */
+.category-header {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border-left: 5px solid #ff0055;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.category-breadcrumbs {
+    font-size: 16px;
+    color: #888888;
+}
+
+.category-breadcrumbs a {
+    color: #ff0055;
+    text-decoration: none;
+	font-weight: bold;
+}
+
+#breadcrumb-atual {
+    color: #555555;
+}
+
+/* Grade de Exibição dos Produtos */
+/* =======================================================
+   GRADE DA PÁGINA DE CATEGORIAS / BUSCAS (ATUALIZADO)
+   ======================================================= */
+.category-page-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Mantém 4 produtos por linha no PC */
+    gap: 20px; /* Igualado ao gap da home */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cards do Produto na Categoria (Idênticos aos da Home) */
+.category-page-grid .product-card {
+    background-color: #ffffff;
+    border-radius: 12px; /* Arredondamento igual ao primeiro */
+    border: 1px solid #e0e0e0; /* Borda cinza suave igual ao primeiro */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transição de 0.2s igual ao primeiro */
+    display: flex;
+    flex-direction: column;
+    min-width: auto; /* Mantém livre para se ajustar ao grid */
+    box-shadow: none; /* Remove a sombra padrão para casar com a home */
+}
+
+.category-page-grid .product-card:hover {
+    transform: translateY(-5px); /* Efeito de subida igual ao primeiro */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra de hover idêntica */
+    border-color: #e0e0e0; /* Mantém a cor da borda consistente */
+}
+
+/* Imagem do Produto em proporção 1:1 perfeita */
+.category-page-grid .product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Força o quadrado perfeito como no primeiro código */
+    background-color: #fafafa;
+    overflow: hidden;
+    border-bottom: 1px solid #eee; /* Linha divisória igual à da home */
+    display: block; /* Remove o flex antigo para alinhar com o primeiro */
+    height: auto; /* Remove a altura fixa de 220px que quebrava a proporção */
+}
+
+.category-page-grid .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém o corte inteligente sem distorcer a foto */
+    transform: none; /* Remove o efeito de escala interna para ficar igual ao primeiro */
+}
+
+/* Remove efeito de zoom na imagem que não existia na home */
+.category-page-grid .product-card:hover .product-image img {
+    transform: none;
+}
+
+/* Bloco de informações internas do produto */
+.category-page-grid .product-info {
+    padding: 15px; /* Reduzido de 20px para 15px igual ao primeiro */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Título do produto igualado ao primeiro */
+.category-page-grid .product-info h3 {
+    font-size: 22px; /* Aumentado para o tamanho original da home */
+    font-weight: 600;
+    color: #1a1a1a; /* Preto suave idêntico */
+    margin: 0 0 8px 0; /* Margem ajustada */
+    line-height: 1.4;
+    height: auto; /* Deixa fluir livremente */
+    display: block; /* Remove o limite anterior de 2 linhas para casar com o primeiro */
+    overflow: visible;
+}
+
+/* Descrição com corte em 3 linhas idêntico ao primeiro */
+.category-page-grid .product-info p {
+    font-size: 16px; /* Ajustado de 13px para 16px */
+    color: #666666;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Força o corte em exatamente 3 linhas como na home */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: auto; /* Remove o tamanho fixo que causava cortes visuais feios */
+}
+
+/* Preço Rosa padrão da marca */
+.category-page-grid .product-price {
+    font-size: 22px; /* Atualizado para o destaque da home */
+    font-weight: 700;
+    color: #ff0055; /* Cor rosa da identidade alterada do verde */
+    margin-top: auto; /* Joga o preço sempre para o fim do card */
+    display: inline-block;
+}
+/* =======================================================
+   RESPONSIVIDADE DA CATEGORIA (TELAS MENORES E CELULAR)
+======================================================= */
+@media (max-width: 1024px) {
+    .category-page-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content-wrapper {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .category-header {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .category-header h2 {
+        font-size: 19px;
+    }
+
+    /* Força duas colunas alinhadas lado a lado no celular */
+    .category-page-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .category-page-grid .product-image {
+        height: 150px; /* Proporção ideal para telas touch */
+    }
+
+    .category-page-grid .product-info {
+        padding: 12px;
+    }
+
+    .category-page-grid .product-info h3 {
+        font-size: 14px;
+        height: 38px;
+        margin-bottom: 6px;
+    }
+
+    /* Esconde o parágrafo longo no mobile para otimizar espaço */
+    .category-page-grid .product-info p {
+        display: none !important;
+    }
+
+    .category-page-grid .product-price {
+        font-size: 15px;
+    }
+}
+
+/* =======================================================
+   SEÇÃO "MAIS PRODUTOS" (RECOMENDADOS)
+======================================================= */
+/* =======================================================
+   SEGUNDO CÓDIGO (ESTILIZADO IGUAL AO PRIMEIRO)
+   ======================================================= */
+
+.mais-produtos-section {
+    background-color: #f5f6f8;
+    padding: 60px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container-mais-produtos {
+    max-width: 1300px; /* Alterado de 1200px para 1300px */
+    margin: 40px auto;  /* Alterado para casar com a margem do primeiro */
+    padding: 0 20px;
+    position: relative;
+}
+
+.titulo-mais-produtos {
+    font-size: 36px; /* Ajustado de 24px para 36px */
+    font-weight: 700;
+    color: #1a1a1a; /* Ajustado de #222222 para #1a1a1a */
+    margin-bottom: 30px;
+    border-left: 4px solid #ff0055; /* Ajustado de 5px/#d2147a para 4px/#ff0055 */
+    padding-left: 10px; /* Ajustado de 15px para 10px */
+}
+
+/* Container do Carrossel */
+.carousel-recomendados-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Trilho de rolagem horizontal */
+.trilho-recomendados {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 10px 5px; /* Ajustado de 15px para 10px */
+    scrollbar-width: none; 
+}
+
+.trilho-recomendados::-webkit-scrollbar {
+    display: none; 
+}
+
+/* CARDS DO PRODUTO (ARREDONDADOS E PADRONIZADOS) */
+.trilho-recomendados .product-card {
+    flex: 0 0 calc(25% - 15px); 
+    background-color: #ffffff; /* Ajustado de background para background-color */
+    border-radius: 12px; /* Ajustado de 8px para 12px */
+    border: 1px solid #e0e0e0; /* Ajustado de #eaeaea para #e0e0e0 */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Ajustado de 0.3s/all para 0.2s/transform/box-shadow */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: none; /* Removida sombra inicial para igualar ao primeiro */
+}
+
+.trilho-recomendados .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Ajustado para a sombra exata do primeiro */
+}
+
+/* Proporção de imagem 1:1 perfeita */
+.trilho-recomendados .product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Forçado aspecto quadrado idêntico ao primeiro */
+    background-color: #fafafa;
+    overflow: hidden;
+    border-bottom: 1px solid #eee; /* Adicionada borda inferior do primeiro */
+    display: block; /* Alterado de flex para block */
+    height: auto; /* Removida altura fixa de 180px para não distorcer o aspecto 1:1 */
+}
+
+.trilho-recomendados .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trilho-recomendados .product-info {
+    padding: 15px; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.trilho-recomendados .product-info h3 {
+    font-size: 22px; /* Ajustado de 15px para 22px */
+    font-weight: 600;
+    color: #1a1a1a; /* Ajustado de #222222 para #1a1a1a */
+    margin-bottom: 8px; /* Ajustado margens */
+    height: auto; /* Removido tamanho travado de 42px */
+    display: block; /* Removido corte de linha do h3 para igualar ao primeiro */
+    overflow: visible;
+}
+
+.trilho-recomendados .product-info p {
+    font-size: 16px; /* Ajustado de 13px para 16px */
+    color: #666666;
+    line-height: 1.4; /* Alinhado espaçamento de linhas */
+    margin-bottom: 15px; /* Ajustado margem */
+    height: auto; /* Removido tamanho travado de 36px */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Ajustado de 2 para 3 linhas de corte */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.trilho-recomendados .product-price {
+    font-size: 22px; /* Ajustado de 16px para 22px */
+    font-weight: 700;
+    color: #ff0055; /* Mudado de verde para o Rosa #ff0055 do primeiro */
+    margin-top: auto;
+}
+
+/* Botões Setas (Estilizados com a cor e tamanho do primeiro) */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff0055; /* Alterado para rosa padrão */
+    border: 1px solid #dcdcdc; /* Alinhado ao estilo do primeiro */
+    color: #ffffff; /* Texto/ícone branco */
+    width: 50px; /* Ajustado de 40px para 50px */
+    height: 50px; /* Ajustado de 40px para 50px */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Alinhado ao primeiro */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #ff0055; /* Mantém a cor original no hover */
+    color: #fff;
+    border-color: #dcdcdc;
+    transform: translateY(-50%) scale(1.05); /* Pequeno feedback de hover mantendo a centralização vertical */
+}
+
+/* Posicionamento das setas para fora do container igual ao modelo 1 */
+.prev-btn { left: -85px; } /* Ajustado de -20px para -85px */
+.next-btn { right: -85px; } /* Ajustado de -20px para -85px */
+
+/* =======================================================
+   RELAÇÃO DE LAYOUT EXCLUSIVA PARA CELULAR (MOBILE)
+======================================================= */
+@media (max-width: 768px) {
+    .mais-produtos-section {
+        padding: 35px 0;
+    }
+
+    .titulo-mais-produtos {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+    /* Esconde as setinhas no celular porque o usuário usa o dedo */
+    .nav-btn {
+        display: none !important;
+    }
+
+    /* Ajuste do espaço do container */
+    .container-mais-produtos {
+        padding: 0 15px;
+    }
+
+    /* Ativa a rolagem por toque fluida (Swipe) */
+    .trilho-recomendados {
+        gap: 12px;
+        padding-bottom: 10px;
+    }
+
+    /* Configuração para o card mobile do carrossel */
+    .trilho-recomendados .product-card {
+        flex: 0 0 160px; /* Garante que os cards fiquem um ao lado do outro sem esmagar */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .trilho-recomendados .product-image {
+        height: 130px;
+    }
+
+    .trilho-recomendados .product-info {
+        padding: 10px;
+    }
+
+    .trilho-recomendados .product-info h3 {
+        font-size: 13px;
+        height: 36px;
+    }
+
+    /* Oculta descrição no mobile para manter os cards compactos */
+    .trilho-recomendados .product-info p {
+        display: none !important;
+    }
+
+    .trilho-recomendados .product-price {
+        font-size: 14px;
+    }
+}
+
+/* Altera para rosa o 'Sob Consulta' na página de categorias */
+.category-page-grid .product-price {
+    color: #d2147a !important; /* Rosa da Flexo */
+}
+
+/* Altera para rosa o 'Sob Consulta' no carrossel 'Mais Produtos' */
+.trilho-recomendados .product-price {
+    color: #d2147a !important; /* Rosa da Flexo */
+}
+
+/* =======================================================
+   ESTILIZAÇÃO DA FAIXA DE NÚMEROS ANIMADOS
+   ======================================================= */
+.counter-section {
+    background-color: #ff0055;
+    padding: 60px 20px;
+    color: #ffffff;
+    font-family: sans-serif; /* Mude para a fonte padrão do seu site se necessário */
+}
+
+.counter-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Garante a quebra de linha em telas menores */
+}
+
+.counter-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px; /* Impede que os itens fiquem esmagados */
+}
+
+.counter-icon {
+    font-size: 28px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.counter-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.counter-label {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+
+/* Ajuste fino para telas de celular */
+@media (max-width: 768px) {
+    .counter-section {
+        padding: 40px 10px;
+    }
+    .counter-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas no celular */
+        gap: 25px 15px;
+    }
+    .counter-number {
+        font-size: 32px; /* Diminui um pouco o número no celular para não quebrar */
+    }
+    .counter-label {
+        font-size: 13px;
+    }
+}
+
+/* =======================================================
+   ESTILIZAÇÃO DA FAIXA DE NÚMEROS ANIMADOS (CORRIGIDO)
+   ======================================================= */
+.counter-section {
+    background-color: #ff0055;
+    padding: 60px 20px;
+    color: #ffffff;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho da caixa */
+    overflow: hidden;       /* Evita qualquer vazamento de conteúdo */
+}
+
+.counter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.counter-item {
+    text-align: center;
+    flex: 1;
+    /* Removemos o min-width fixo que estava quebrando o mobile */
+    min-width: 140px; 
+    box-sizing: border-box;
+}
+
+.counter-icon {
+    font-size: 24px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.counter-number {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 5px 0;
+    white-space: nowrap; /* Impede que o número quebre linha no meio */
+}
+
+.counter-label {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* =======================================================
+   AJUSTE DE RESPONSIVIDADE ULTRA-SEGURO PARA CELULAR
+   ======================================================= */
+@media (max-width: 768px) {
+    .counter-section {
+        padding: 40px 10px;
+    }
+    
+    .counter-container {
+        display: grid;
+        /* Alinha em 2 colunas perfeitas que dividem a tela exatamente ao meio (50% cada) */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px 10px;
+        width: 100%;
+    }
+    
+    .counter-item {
+        min-width: 0; /* Remove qualquer trava de tamanho em telas pequenas */
+        padding: 5px;
+    }
+    
+    .counter-number {
+        font-size: 28px; /* Reduz um pouco o tamanho para caber até em celulares antigos */
+    }
+    
+    .counter-label {
+        font-size: 12px;
+    }
+}
+
+/* =======================================================
+   CORREÇÃO DE CONFLITOS NO RODAPÉ DO CELULAR
+   ======================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Dá espaço no fim da página para os cards não ficarem escondidos atrás do botão fixo */
+    body, .page-content-wrapper {
+        padding-bottom: 80px !important; 
+    }
+
+    /* 2. Joga o botão redondo flutuante do WhatsApp para cima da barra de orçamento */
+    .whatsapp-float {
+        bottom: 75px !important; /* Sobe o botão redondo para ficar acima dos ~60px da barra verde */
+        right: 15px !important;
+        z-index: 9999 !important; /* Garante que ele fique na frente de tudo */
+    }
+
+    /* 3. Garante que os cards da seção "Mais Produtos" fiquem totalmente visíveis */
+    #cards-mais-produtos .product-card {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto; /* Deixa o card expandir conforme o texto */
+    }
+
+    /* 4. Limita a imagem do card no celular para sobrar espaço para o texto e o preço */
+    #cards-mais-produtos .product-image img {
+        max-height: 140px; /* Impede que a imagem gigante esmague o texto para baixo */
+        object-fit: cover;
+        width: 100%;
+    }
+    
+    /* 5. Garante que o título e preço não sumam */
+    #cards-mais-produtos .product-info {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
